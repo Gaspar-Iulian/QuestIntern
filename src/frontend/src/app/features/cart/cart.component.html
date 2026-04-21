@@ -1,0 +1,38 @@
+<section class="section-header">
+  <div>
+    <h1>Cart</h1>
+    <p>Review selected products before checkout.</p>
+  </div>
+</section>
+
+@if (items$ | async; as items) {
+  @if (items.length > 0) {
+    <section class="cart-list">
+      @for (item of items; track item.product.id) {
+        <article class="cart-row">
+          <div>
+            <h2>{{ item.product.name }}</h2>
+            <p>{{ item.product.price | currency }} each</p>
+          </div>
+
+          <div class="quantity-controls">
+            <button type="button" (click)="decrease(item.product.id)">-</button>
+            <span>{{ item.quantity }}</span>
+            <button type="button" (click)="increase(item.product)">+</button>
+          </div>
+
+          <strong>{{ item.product.price * item.quantity | currency }}</strong>
+          <button class="secondary" type="button" (click)="remove(item.product.id)">Remove</button>
+        </article>
+      }
+    </section>
+
+    <footer class="cart-total">
+      <span>Total</span>
+      <strong>{{ totalPrice$ | async | currency }}</strong>
+      <a class="checkout-link" routerLink="/checkout">Checkout</a>
+    </footer>
+  } @else {
+    <p class="muted">Your cart is empty.</p>
+  }
+}

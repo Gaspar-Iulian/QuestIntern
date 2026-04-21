@@ -1,0 +1,83 @@
+.app-header {
+  align-items: center;
+  backdrop-filter: blur(24px) saturate(160%);
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 26px;
+  box-shadow: 0 24px 70px rgba(40, 74, 116, 0.18);
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  left: 50%;
+  max-width: 1120px;
+  padding: 14px 22px;
+  position: sticky;
+  top: 16px;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  z-index: 10;
+}
+
+.brand {
+  color: #102033;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.main-nav {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.main-nav a,
+.nav-button,
+.user-pill {
+  border-radius: 999px;
+  color: #294055;
+  font: inherit;
+  padding: 8px 10px;
+  text-decoration: none;
+}
+
+.nav-button {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.user-pill {
+  background: rgba(23, 107, 135, 0.12);
+  color: #0f566d;
+  font-weight: 700;
+}
+
+.main-nav a.active,
+.main-nav a:hover,
+.nav-button:hover {
+  background: rgba(255, 255, 255, 0.82);
+  color: #102033;
+}
+
+.page-shell {
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 48px 32px 32px;
+}
+
+@media (max-width: 640px) {
+  .app-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    position: static;
+    transform: none;
+    width: calc(100% - 24px);
+  }
+
+  .page-shell {
+    padding: 20px 16px;
+  }
+}

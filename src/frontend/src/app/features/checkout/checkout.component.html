@@ -1,0 +1,81 @@
+<section class="checkout-layout">
+  <div class="checkout-panel">
+    <p class="eyebrow">Secure checkout</p>
+    <h1>Shipping address</h1>
+
+    <form [formGroup]="checkoutForm" (ngSubmit)="submit()">
+      <label>
+        Full name
+        <input type="text" formControlName="shippingFullName" autocomplete="name" />
+      </label>
+
+      <label>
+        Address
+        <input type="text" formControlName="shippingAddressLine1" autocomplete="street-address" />
+      </label>
+
+      <div class="form-grid">
+        <label>
+          City
+          <input type="text" formControlName="shippingCity" autocomplete="address-level2" />
+        </label>
+
+        <label>
+          Postal code
+          <input type="text" formControlName="shippingPostalCode" autocomplete="postal-code" />
+        </label>
+      </div>
+
+      <label>
+        Country
+        <input type="text" formControlName="shippingCountry" autocomplete="country-name" />
+      </label>
+
+      @if (errors$ | async; as errors) {
+        @if (errors.length > 0) {
+          <div class="error-list">
+            @for (error of errors; track error) {
+              <p>{{ error }}</p>
+            }
+          </div>
+        }
+      }
+
+      <button type="submit" [disabled]="isSubmitting">
+        {{ isSubmitting ? 'Placing order...' : 'Place Order' }}
+      </button>
+    </form>
+
+    @if (order$ | async; as order) {
+      <div class="success-panel">
+        <h2>Order #{{ order.orderId }} placed</h2>
+        <p>{{ order.createdAtUtc | date: 'medium' }}</p>
+        <strong>{{ order.totalAmount | currency }}</strong>
+      </div>
+    }
+  </div>
+
+  <aside class="summary-panel">
+    <h2>Order summary</h2>
+
+    @if (items$ | async; as items) {
+      @if (items.length > 0) {
+        <div class="summary-list">
+          @for (item of items; track item.product.id) {
+            <div class="summary-row">
+              <span>{{ item.product.name }} x {{ item.quantity }}</span>
+              <strong>{{ item.product.price * item.quantity | currency }}</strong>
+            </div>
+          }
+        </div>
+
+        <footer>
+          <span>Display total</span>
+          <strong>{{ totalPrice$ | async | currency }}</strong>
+        </footer>
+      } @else {
+        <p class="muted">Your cart is empty. <a routerLink="/">Add products</a></p>
+      }
+    }
+  </aside>
+</section>

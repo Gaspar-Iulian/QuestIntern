@@ -1,0 +1,27 @@
+<section class="section-header">
+  <div>
+    <h1>Products</h1>
+    <p>Select products from the catalog and add them to the cart.</p>
+  </div>
+</section>
+
+@if (products$ | async; as products) {
+  <section class="product-grid">
+    @for (product of products; track product.id) {
+      <article class="product-card">
+        <img [src]="product.imageUrl" [alt]="product.name" />
+        <div class="product-body">
+          <h2>{{ product.name }}</h2>
+          <p>{{ product.description }}</p>
+          <div class="product-meta">
+            <strong>{{ product.price | currency }}</strong>
+            <span>{{ product.stockQuantity }} in stock</span>
+          </div>
+          <button type="button" (click)="addToCart(product)">Add to Cart</button>
+        </div>
+      </article>
+    }
+  </section>
+} @else {
+  <p class="muted">Loading products...</p>
+}
