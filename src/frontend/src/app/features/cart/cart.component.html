@@ -1,7 +1,7 @@
 <section class="section-header">
   <div>
     <h1>Cart</h1>
-    <p>Review selected products before checkout.</p>
+    <p>Verifica produsele selectate inainte de checkout.</p>
   </div>
 </section>
 
@@ -12,7 +12,7 @@
         <article class="cart-row">
           <div>
             <h2>{{ item.product.name }}</h2>
-            <p>{{ item.product.price | currency }} each</p>
+            <p>{{ item.product.price | currency: 'RON' }} / bucata</p>
           </div>
 
           <div class="quantity-controls">
@@ -21,18 +21,18 @@
             <button type="button" (click)="increase(item.product)">+</button>
           </div>
 
-          <strong>{{ item.product.price * item.quantity | currency }}</strong>
-          <button class="secondary" type="button" (click)="remove(item.product.id)">Remove</button>
+          <strong>{{ item.product.price * item.quantity | currency: 'RON' }}</strong>
+          <button class="secondary" type="button" (click)="remove(item.product.id)">Sterge</button>
         </article>
       }
     </section>
 
     <footer class="cart-total">
-      <span>Total</span>
-      <strong>{{ totalPrice$ | async | currency }}</strong>
+      <span>Total afisat</span>
+      <strong>{{ totalPrice$ | async | currency: 'RON' }}</strong>
       <a class="checkout-link" routerLink="/checkout">Checkout</a>
     </footer>
   } @else {
-    <p class="muted">Your cart is empty.</p>
+    <p class="muted">Cosul este gol.</p>
   }
 }

@@ -1,42 +1,91 @@
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 24px;
+.catalog-hero {
+  align-items: end;
+  backdrop-filter: blur(26px) saturate(150%);
+  background:
+    linear-gradient(135deg, rgba(255, 252, 244, 0.82), rgba(250, 238, 214, 0.55)),
+    url("https://dordegusturi.ro/wp-content/uploads/2024/06/dordegusturi-logo.png");
+  background-position: right 28px center;
+  background-repeat: no-repeat;
+  background-size: 150px auto;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 30px;
+  box-shadow: 0 28px 90px rgba(92, 70, 39, 0.14);
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin-bottom: 26px;
+  min-height: 230px;
+  padding: 32px;
 }
 
-.section-header h1 {
-  color: #102033;
-  font-size: 30px;
-  margin: 0 0 8px;
+.hero-copy {
+  max-width: 650px;
 }
 
-.section-header p,
+.eyebrow {
+  color: #7d5a2f;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.catalog-hero h1 {
+  color: #26351f;
+  font-size: 44px;
+  line-height: 1.05;
+  margin: 12px 0 14px;
+  max-width: 680px;
+}
+
+.catalog-hero p,
 .muted {
-  color: #5b6678;
+  color: #65715d;
+  line-height: 1.55;
   margin: 0;
+}
+
+.hero-note {
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 22px;
+  color: #65715d;
+  display: grid;
+  gap: 4px;
+  min-width: 150px;
+  padding: 18px;
+}
+
+.hero-note strong {
+  color: #26351f;
+  font-size: 24px;
 }
 
 .product-grid {
   display: grid;
-  gap: 18px;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
 .product-card {
   backdrop-filter: blur(22px) saturate(150%);
-  background: rgba(255, 255, 255, 0.62);
-  border: 1px solid rgba(255, 255, 255, 0.74);
-  border-radius: 24px;
-  box-shadow: 0 24px 70px rgba(52, 84, 122, 0.16);
+  background: rgba(255, 252, 244, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 26px;
+  box-shadow: 0 24px 70px rgba(92, 70, 39, 0.12);
   overflow: hidden;
 }
 
-.product-card img {
+.product-media {
+  background:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.86), rgba(243, 226, 197, 0.34));
+  padding: 18px;
+}
+
+.product-media img {
   aspect-ratio: 4 / 3;
-  background: rgba(255, 255, 255, 0.36);
   display: block;
   object-fit: contain;
-  padding: 16px;
   width: 100%;
 }
 
@@ -44,18 +93,22 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 16px;
+  padding: 18px;
 }
 
 .product-body h2 {
-  font-size: 18px;
+  color: #26351f;
+  font-size: 17px;
+  line-height: 1.25;
   margin: 0;
+  min-height: 42px;
 }
 
 .product-body p {
-  color: #5b6678;
+  color: #65715d;
   line-height: 1.4;
   margin: 0;
+  min-height: 60px;
 }
 
 .product-meta {
@@ -65,15 +118,15 @@
 }
 
 .product-meta span {
-  color: #667085;
+  color: #6c7864;
   font-size: 14px;
 }
 
 button {
-  background: linear-gradient(135deg, #176b87, #2f97b7);
+  background: linear-gradient(135deg, #6f4b24, #b7833f);
   border: 0;
   border-radius: 16px;
-  box-shadow: 0 14px 34px rgba(23, 107, 135, 0.24);
+  box-shadow: 0 14px 34px rgba(111, 75, 36, 0.2);
   color: #ffffff;
   cursor: pointer;
   font-weight: 700;
@@ -83,4 +136,17 @@ button {
 
 button:hover {
   filter: brightness(0.96);
+}
+
+@media (max-width: 760px) {
+  .catalog-hero {
+    align-items: start;
+    background-image: linear-gradient(135deg, rgba(255, 252, 244, 0.82), rgba(250, 238, 214, 0.55));
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .catalog-hero h1 {
+    font-size: 34px;
+  }
 }

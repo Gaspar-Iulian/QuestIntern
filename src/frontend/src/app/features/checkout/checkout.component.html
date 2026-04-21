@@ -1,33 +1,33 @@
 <section class="checkout-layout">
   <div class="checkout-panel">
-    <p class="eyebrow">Secure checkout</p>
-    <h1>Shipping address</h1>
+    <p class="eyebrow">Checkout sigur</p>
+    <h1>Adresa de livrare</h1>
 
     <form [formGroup]="checkoutForm" (ngSubmit)="submit()">
       <label>
-        Full name
+        Nume complet
         <input type="text" formControlName="shippingFullName" autocomplete="name" />
       </label>
 
       <label>
-        Address
+        Adresa
         <input type="text" formControlName="shippingAddressLine1" autocomplete="street-address" />
       </label>
 
       <div class="form-grid">
         <label>
-          City
+          Oras
           <input type="text" formControlName="shippingCity" autocomplete="address-level2" />
         </label>
 
         <label>
-          Postal code
+          Cod postal
           <input type="text" formControlName="shippingPostalCode" autocomplete="postal-code" />
         </label>
       </div>
 
       <label>
-        Country
+        Tara
         <input type="text" formControlName="shippingCountry" autocomplete="country-name" />
       </label>
 
@@ -42,21 +42,21 @@
       }
 
       <button type="submit" [disabled]="isSubmitting">
-        {{ isSubmitting ? 'Placing order...' : 'Place Order' }}
+        {{ isSubmitting ? 'Se plaseaza comanda...' : 'Plaseaza comanda' }}
       </button>
     </form>
 
     @if (order$ | async; as order) {
       <div class="success-panel">
-        <h2>Order #{{ order.orderId }} placed</h2>
+        <h2>Comanda #{{ order.orderId }} a fost plasata</h2>
         <p>{{ order.createdAtUtc | date: 'medium' }}</p>
-        <strong>{{ order.totalAmount | currency }}</strong>
+        <strong>{{ order.totalAmount | currency: 'RON' }}</strong>
       </div>
     }
   </div>
 
   <aside class="summary-panel">
-    <h2>Order summary</h2>
+    <h2>Sumar comanda</h2>
 
     @if (items$ | async; as items) {
       @if (items.length > 0) {
@@ -64,17 +64,17 @@
           @for (item of items; track item.product.id) {
             <div class="summary-row">
               <span>{{ item.product.name }} x {{ item.quantity }}</span>
-              <strong>{{ item.product.price * item.quantity | currency }}</strong>
+              <strong>{{ item.product.price * item.quantity | currency: 'RON' }}</strong>
             </div>
           }
         </div>
 
         <footer>
-          <span>Display total</span>
-          <strong>{{ totalPrice$ | async | currency }}</strong>
+          <span>Total afisat</span>
+          <strong>{{ totalPrice$ | async | currency: 'RON' }}</strong>
         </footer>
       } @else {
-        <p class="muted">Your cart is empty. <a routerLink="/">Add products</a></p>
+        <p class="muted">Cosul este gol. <a routerLink="/">Adauga produse</a></p>
       }
     }
   </aside>

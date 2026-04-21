@@ -79,7 +79,7 @@ database/002_users.sql
 database/003_orders.sql
 ```
 
-Primul script creeaza baza `QuestEcommerce`, tabela `Products` si cateva produse initiale. Al doilea script creeaza tabela `Users`. Al treilea script creeaza tabelele `Orders` si `OrderItems`.
+Primul script creeaza baza `QuestEcommerce`, tabela `Products` si cateva produse initiale. Catalogul foloseste produse gourmet romanesti sample, inspirate de fluxul cerut pentru Automation Exercise. Al doilea script creeaza tabela `Users`. Al treilea script creeaza tabelele `Orders` si `OrderItems`.
 
 ## Pasii de implementare
 

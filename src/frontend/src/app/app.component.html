@@ -1,15 +1,18 @@
 <header class="app-header">
-  <a class="brand" routerLink="/">Quest Shop</a>
+  <a class="brand" routerLink="/">
+    <span class="brand-mark">DG</span>
+    <span>Dor de Gusturi</span>
+  </a>
 
   <nav class="main-nav">
-    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Products</a>
-    <a routerLink="/cart" routerLinkActive="active">Cart ({{ cartCount$ | async }})</a>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Catalog</a>
+    <a routerLink="/cart" routerLinkActive="active">Cos ({{ cartCount$ | async }})</a>
     @if (currentUser$ | async; as user) {
       <span class="user-pill">{{ user.fullName }}</span>
       <button class="nav-button" type="button" (click)="logout()">Logout</button>
     } @else {
       <a routerLink="/login" routerLinkActive="active">Login</a>
-      <a routerLink="/register" routerLinkActive="active">Register</a>
+      <a routerLink="/register" routerLinkActive="active">Cont nou</a>
     }
   </nav>
 </header>

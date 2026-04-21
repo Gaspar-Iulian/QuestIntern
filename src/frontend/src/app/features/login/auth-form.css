@@ -6,17 +6,17 @@
 
 .auth-panel {
   backdrop-filter: blur(26px) saturate(160%);
-  background: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 252, 244, 0.68);
   border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: 28px;
-  box-shadow: 0 30px 90px rgba(52, 84, 122, 0.2);
+  box-shadow: 0 30px 90px rgba(92, 70, 39, 0.14);
   max-width: 430px;
   padding: 32px;
   width: 100%;
 }
 
 .eyebrow {
-  color: #176b87;
+  color: #7d5a2f;
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 0;
@@ -25,7 +25,7 @@
 }
 
 h1 {
-  color: #102033;
+  color: #26351f;
   font-size: 34px;
   margin: 0 0 24px;
 }
@@ -36,7 +36,7 @@ form {
 }
 
 label {
-  color: #294055;
+  color: #38472d;
   display: grid;
   font-weight: 700;
   gap: 8px;
@@ -44,9 +44,9 @@ label {
 
 input {
   background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(132, 157, 184, 0.34);
+  border: 1px solid rgba(125, 90, 47, 0.2);
   border-radius: 16px;
-  color: #102033;
+  color: #26351f;
   font: inherit;
   min-height: 48px;
   outline: none;
@@ -54,15 +54,15 @@ input {
 }
 
 input:focus {
-  border-color: rgba(23, 107, 135, 0.62);
-  box-shadow: 0 0 0 4px rgba(23, 107, 135, 0.12);
+  border-color: rgba(125, 90, 47, 0.52);
+  box-shadow: 0 0 0 4px rgba(125, 90, 47, 0.12);
 }
 
 button {
-  background: linear-gradient(135deg, #176b87, #2f97b7);
+  background: linear-gradient(135deg, #6f4b24, #b7833f);
   border: 0;
   border-radius: 18px;
-  box-shadow: 0 14px 34px rgba(23, 107, 135, 0.24);
+  box-shadow: 0 14px 34px rgba(111, 75, 36, 0.2);
   color: #ffffff;
   cursor: pointer;
   font: inherit;
@@ -85,7 +85,7 @@ button:disabled {
 
 .policy-list {
   background: rgba(255, 255, 255, 0.44);
-  color: #5b6678;
+  color: #65715d;
   display: grid;
   gap: 6px;
   list-style-position: inside;
@@ -111,13 +111,13 @@ button:disabled {
 }
 
 .auth-link {
-  color: #5b6678;
+  color: #65715d;
   margin: 18px 0 0;
   text-align: center;
 }
 
 .auth-link a {
-  color: #176b87;
+  color: #7d5a2f;
   font-weight: 800;
   text-decoration: none;
 }

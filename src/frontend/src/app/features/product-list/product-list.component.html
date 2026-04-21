@@ -1,7 +1,12 @@
-<section class="section-header">
-  <div>
-    <h1>Products</h1>
-    <p>Select products from the catalog and add them to the cart.</p>
+<section class="catalog-hero">
+  <div class="hero-copy">
+    <span class="eyebrow">Camara romaneasca</span>
+    <h1>Gusturi alese pentru cosul tau de acasa</h1>
+    <p>Produse gourmet romanesti pentru un vertical slice complet: catalog, cos, checkout si cont client.</p>
+  </div>
+  <div class="hero-note">
+    <strong>6 produse</strong>
+    <span>sample catalog</span>
   </div>
 </section>
 
@@ -9,19 +14,21 @@
   <section class="product-grid">
     @for (product of products; track product.id) {
       <article class="product-card">
-        <img [src]="product.imageUrl" [alt]="product.name" />
+        <div class="product-media">
+          <img [src]="product.imageUrl" [alt]="product.name" />
+        </div>
         <div class="product-body">
           <h2>{{ product.name }}</h2>
           <p>{{ product.description }}</p>
           <div class="product-meta">
-            <strong>{{ product.price | currency }}</strong>
-            <span>{{ product.stockQuantity }} in stock</span>
+            <strong>{{ product.price | currency: 'RON' }}</strong>
+            <span>{{ product.stockQuantity }} in stoc</span>
           </div>
-          <button type="button" (click)="addToCart(product)">Add to Cart</button>
+          <button type="button" (click)="addToCart(product)">Adauga in cos</button>
         </div>
       </article>
     }
   </section>
 } @else {
-  <p class="muted">Loading products...</p>
+  <p class="muted">Se incarca produsele...</p>
 }
