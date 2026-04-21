@@ -21,4 +21,9 @@ export class ProductListComponent {
   addToCart(product: Product): void {
     this.cartService.add(product);
   }
+
+  handleImageError(event: Event): void {
+    const image = event.target as HTMLImageElement;
+    image.src = '/product-placeholder.svg';
+  }
 }

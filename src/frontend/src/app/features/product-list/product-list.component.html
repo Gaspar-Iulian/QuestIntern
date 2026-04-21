@@ -15,7 +15,7 @@
     @for (product of products; track product.id) {
       <article class="product-card">
         <div class="product-media">
-          <img [src]="product.imageUrl" [alt]="product.name" />
+          <img [src]="product.imageUrl" [alt]="product.name" loading="lazy" (error)="handleImageError($event)" />
         </div>
         <div class="product-body">
           <h2>{{ product.name }}</h2>

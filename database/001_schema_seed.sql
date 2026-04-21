@@ -28,12 +28,12 @@ MERGE dbo.Products AS target
 USING
 (
     VALUES
-        (1, N'*RTR* NECTAR DE CAISE FARA ZAHAR 300ML', N'Nectar romanesc de caise, fara zahar adaugat, potrivit pentru un cos cu gusturi curate.', 14.00, N'https://dordegusturi.ro/wp-content/uploads/2025/12/NECTAR-DE-CAISE-600x600.jpg', 34),
-        (2, N'SCORTISOARA PUDRA 70GR', N'Condiment aromat pentru deserturi, bauturi calde si retete de camara.', 6.00, N'https://dordegusturi.ro/wp-content/uploads/2025/12/SCORTISOARA-PUDRA-70GR-600x600.jpg', 50),
-        (3, N'RISOTTO 750GR ECO', N'Produs de camara ecologic, potrivit pentru mese simple, consistente si naturale.', 44.00, N'https://dordegusturi.ro/wp-content/uploads/2025/12/RISOTTO-750GR-ECO-600x600.jpg', 18),
-        (4, N'BRANZA DE BURDUF CU CHIMEN FERMA DE LA BRAN 100GR', N'Branza artizanala cu chimen, pentru platouri romanesti si gustari cu personalitate.', 11.70, N'https://dordegusturi.ro/wp-content/uploads/2025/12/BRANZA-DE-BURDUF-CU-CHIMEN-FERMA-DE-LA-BRAN-100GR-600x600.jpg', 28),
-        (5, N'ARDEI IUTE IN OTET 290GR', N'Ardei iute in otet pentru mese traditionale, muraturi si preparate cu gust intens.', 22.00, N'https://dordegusturi.ro/wp-content/uploads/2025/12/ARDEI-IUTE-IN-OTET-290GR-600x600.jpg', 22),
-        (6, N'SIROP DE SOC 500ML - DIN INIMA TARII', N'Sirop romanesc de soc, ideal pentru bauturi racoritoare si deserturi de casa.', 38.00, N'https://dordegusturi.ro/wp-content/uploads/2025/12/SIROP-DE-SOC-500ML-600x600.jpg', 16)
+        (1, N'*RTR* NECTAR DE CAISE FARA ZAHAR 300ML', N'Nectar romanesc de caise, fara zahar adaugat, potrivit pentru un cos cu gusturi curate.', 11.00, N'https://dordegusturi.ro/wp-content/uploads/2025/12/Produs-_391-9-600x600.png', 34),
+        (2, N'*RTR* NECTAR DE CAPSUNI FARA ZAHAR 300ML', N'Nectar de capsuni fara zahar adaugat, pentru bauturi simple si deserturi de casa.', 11.00, N'https://dordegusturi.ro/wp-content/uploads/2025/12/Produs-_393-1-600x600.jpg', 30),
+        (3, N'*RTR* NECTAR DE PIERSICI FARA ZAHAR 300ML', N'Nectar de piersici fara zahar adaugat, cu gust fructat si textura fina.', 11.00, N'https://dordegusturi.ro/wp-content/uploads/2025/12/Produs-_392-1-600x600.jpg', 28),
+        (4, N'*RTR* NECTAR DE PRUNE FARA ZAHAR 300ML', N'Nectar de prune fara zahar adaugat, potrivit pentru un mic dejun rapid.', 11.00, N'https://dordegusturi.ro/wp-content/uploads/2025/12/Produs-_394-1-600x600.jpg', 24),
+        (5, N'ACADEA CIOCOLATA - MIISIMII', N'Acadea de ciocolata pentru un desert mic, artizanal si usor de pus in cos.', 10.00, N'https://dordegusturi.ro/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-23-at-11.31.15-3-600x600.jpeg', 22),
+        (6, N'ANTRICOT DE MANZAT FARA OS BIO SKIN 100GR', N'Antricot de manzat fara os, portionat pentru un catalog gourmet variat.', 18.00, N'https://dordegusturi.ro/wp-content/uploads/2025/12/Produs-_102-1-600x600.jpg', 16)
 ) AS source (Id, Name, Description, Price, ImageUrl, StockQuantity)
 ON target.Id = source.Id
 WHEN MATCHED THEN

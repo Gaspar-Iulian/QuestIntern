@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Product image placeholder">
+  <rect width="600" height="600" fill="#fff8ec"/>
+  <circle cx="300" cy="250" r="118" fill="#ead6b5"/>
+  <path d="M170 405c42-68 92-102 150-102 55 0 94 30 110 102H170z" fill="#7d5a2f" opacity=".85"/>
+  <path d="M245 214c22-55 64-85 125-90-8 64-45 99-111 104" fill="#7dab84"/>
+  <text x="300" y="472" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#6f4b24">Dor de Gusturi</text>
+</svg>
